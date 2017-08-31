@@ -19,7 +19,7 @@ if("HEROKU_URL" in environ):
 else:
     exit("Environment variable HEROKU_URL not set, please add it using 'heroku config:set HEROKU_URL=<URL>'")
 
-
+url = url + token
 bot = telebot.TeleBot(token)
 
 welcome_message = '''Hello!
@@ -30,4 +30,4 @@ def send_welcome(message):
     bot.reply_to(message, welcome_message)
 
 print("Setting webhook url to: ", url)
-bot.set_webhook(url + token)
+bot.set_webhook(url)
