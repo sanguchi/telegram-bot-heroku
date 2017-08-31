@@ -1,5 +1,5 @@
 import flask
-from bot import token
+from bot import token, bot
 from telebot.types import Update
 
 
