@@ -1,5 +1,5 @@
 import flask
-import bot
+from bot import token
 from telebot.types import Update
 
 
@@ -11,7 +11,7 @@ def index():
 	return "It works!"
 
 
-@app.route("/{}".format(bot.token), methods=["POST"])
+@app.route("/{}".format(token), methods=["POST"])
 def handle_update():
     if(flask.request.headers.get("content-type") == "application/json"):
         json_string = flask.request.get_data().decode("utf-8")

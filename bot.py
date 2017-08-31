@@ -30,4 +30,4 @@ def send_welcome(message):
     bot.reply_to(message, welcome_message)
 
 print("Setting webhook url to: ", url)
-bot.set_webhook(url)
+bot.set_webhook(url + token)
