@@ -19,11 +19,18 @@ if("HEROKU_URL" in environ):
 else:
     exit("Environment variable HEROKU_URL not set, please add it using 'heroku config:set HEROKU_URL=<URL>'")
 
+
+welcome_message = '''Hello!
+This bot is running on a heroku instance.
+URL: {}'''.format(url)
+
+# If you put the welcome message below this line you will make a big mistake:
+# url actually is set to "etc.herokupp.com" but this line edits the url adding the 
+# bot token, so you will leak your bot token if you move the welcome message.
 url = url + token
 bot = telebot.TeleBot(token)
 
-welcome_message = '''Hello!
-This bot is running on a heroku instance.'''
+
 
 @bot.message_handler(commands=["start", "help"])
 def send_welcome(message):
