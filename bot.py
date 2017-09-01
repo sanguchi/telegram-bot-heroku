@@ -3,7 +3,8 @@ import telebot
 
 
 print("Loading bot module")
-
+if("HEROKU_APP_NAME" in environ):
+    print("HEROKU_APP_NAME detected, value:", environ["HEROKU_APP_NAME"])
 
 if("TELEGRAM_TOKEN" in environ):
     token = environ["TELEGRAM_TOKEN"]
