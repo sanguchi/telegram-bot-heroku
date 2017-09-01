@@ -1,0 +1,32 @@
+{
+  "name": "Telegram bot for heroku",
+  "description": "This app launchs a flask server and handles incoming messages from telegram.",
+  "keywords": [
+    "telegram",
+    "bot",
+    "flask",
+    "python",
+  ],
+  "logo": "https://devcenter-assets0.herokucdn.com/assets/public/getting-started/python-logo-2e21820c8543363034a78ba79d033348836685879ffec1fc25fb2b87c9f88fa1.png",
+  "env": {
+    "TELEGRAM_TOKEN": {
+      "description": "Telegram token given by @botfather",
+      "required": true,
+    },
+    "GITHUB_URL": {
+      "description": "The repository url where the bot's code is hosted.",
+      "required": false,
+      "value": "https://github.com/sanguchi/telegram-bot-heroku/"
+    },
+    "HEROKU_URL": {
+      "description": "The app url heroku generates, required if you didn't enable labs(recommended).",
+      "required": true,
+      "value": "YOUR_HEROKU_APP_URL_HERE"
+    },
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+}
