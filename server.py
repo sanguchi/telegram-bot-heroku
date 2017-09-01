@@ -1,14 +1,18 @@
 import flask
 from bot import token, bot
 from telebot.types import Update
-
+from os import environ
 
 app = flask.Flask(__name__)
 
 
 @app.route('/')
 def index():
-	return "It works!"
+    if("GITHUB_URL" in environ):
+        repo = environ["GITHUB_URL"]
+    else:
+        repo = None
+    return flask.render_template("index.html", repo=repo)
 
 
 @app.route("/{}".format(token), methods=["POST"])
