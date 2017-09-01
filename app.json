@@ -12,6 +12,7 @@
     "TELEGRAM_TOKEN": {
       "description": "Telegram token given by @botfather",
       "required": true,
+      "value": "YOUR_TELEGRAM_TOKEN_HERE",
     },
     "GITHUB_URL": {
       "description": "The repository url where the bot's code is hosted.",
