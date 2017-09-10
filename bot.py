@@ -41,5 +41,9 @@ bot = telebot.TeleBot(token)
 def send_welcome(message):
     bot.reply_to(message, welcome_message)
 
-print("Setting webhook url to: ", url)
-bot.set_webhook(url)
+if(__name__=='__main__'):
+	print("Running locally with long polling")
+	bot.polling()
+else:
+	print("Setting webhook url to: ", url)
+	bot.set_webhook(url)
